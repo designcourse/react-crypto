@@ -1,14 +1,37 @@
 import React, { Component } from 'react';
 import './App.css';
-import cryptocurrency from './components/cryptocurrency.js';
-import total_market_cap from './components/total_market_cap.js';
-import trial from './components/trial.js';
+import axios from 'axios';
+var NumberFormat = require('react-number-format');
 
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cryptos: []
+    };
+  }
 
-class App extends Component { 
+  componentDidMount() {
+    axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,IOT&tsyms=INR')
+      .then(res => {
+        //const cryptos = res.data;
+        const cryptos = res.data;
+        console.log(cryptos);
+        this.setState({cryptos: cryptos});
+      })
+  }
+
   render() {
     return (
-      <trial />
+      <div className="App">
+        {Object.keys(this.state.cryptos).map((key) => (
+
+          <div id="crypto-container">
+            <span className="left">{key}</span>
+            <span className="right"><NumberFormat value={this.state.cryptos[key].INR} displayType={'text'} decimalPrecision={2} thousandSeparator={true} prefix={'₹'} /></span>
+          </div>
+        ))}
+      </div>
     );
   }
 }
