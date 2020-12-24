@@ -1,38 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import axios from 'axios';
-var NumberFormat = require('react-number-format');
+import cryptocurrency from './components/cryptocurrency.js';
+import total_market_cap from './components/total_market_cap.js';
+import trial from './components/trial.js';
 
-class App extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      cryptos: []
-    };
-  }
-
-  componentDidMount() {
-    axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,IOT&tsyms=USD')
-      .then(res => {
-        const cryptos = res.data;
-        console.log(cryptos);
-        this.setState({cryptos: cryptos});
-      })
-  }
-
+class App extends Component { 
   render() {
     return (
-      <div className="App">
-        {Object.keys(this.state.cryptos).map((key) => (
-
-          <div id="crypto-container">
-            <span className="left">{key}</span>
-            <span className="right">{key}</span>
-          </div>
-        ))}
-      </div>
+      <trial />
     );
   }
 }
