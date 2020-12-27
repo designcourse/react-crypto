@@ -24,8 +24,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h2 class="heading">Cryptocurrency </h2>
         {Object.keys(this.state.cryptos).map((key) => (
-
           <div id="crypto-container">
             <span className="left">{key}</span>
             <span className="right"><NumberFormat value={this.state.cryptos[key].INR} displayType={'text'} decimalPrecision={2} thousandSeparator={true} prefix={'₹'} /></span>
