@@ -5,17 +5,8 @@ import { MDBContainer, MDBFooter, MDBIcon } from "mdbreact";
 const FooterPage = () => {
   return (
     <div>    
-      
-    <MDBFooter color="white" className="font-small pt-4 mt-4">
-      <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
-         Made with ♥ By <a href="https://www.sanketpatil.me/"> Sanket Patil </a> 
-        </MDBContainer>
-      </div>
-    </MDBFooter>
 
-    <div>
-      
+    <MDBContainer >
     <form>
 
       <div class="form-group row">
@@ -33,10 +24,15 @@ const FooterPage = () => {
       </div>
 
     </form>
-
-
-    </div>
-
+    </MDBContainer>
+      
+    <MDBFooter color="white" className="font-small pt-4 mt-4">
+      <div className="footer-copyright text-center py-3">
+        <MDBContainer fluid>
+         Made with ♥ By <a href="https://www.sanketpatil.me/"> Sanket Patil </a> 
+        </MDBContainer>
+      </div>
+    </MDBFooter>
 
     </div>    
 
