@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { MDBContainer } from 'mdbreact';
+import "./FullData.css"
 
-
-var NumberFormat = require('react-number-format');
 
 class App extends Component {
 
@@ -10,16 +10,20 @@ class App extends Component {
     super(props);
 
     this.state = {
-      full: []
+      BTC: [],ETH: []
     };
   }
 
   componentDidMount() {
-      axios.get('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=INR')
+      axios.get('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH&tsyms=USD')
       .then(res => {
-        const full = res.data.DISPLAY.BTC.INR;
-        console.log(res.data.DISPLAY.BTC);
-        this.setState({full: full});
+        const BTC = res.data.DISPLAY.BTC.USD;
+        const ETH = res.data.DISPLAY.BTC.ETH;
+
+        console.log(res.data.DISPLAY);
+        this.setState({BTC: BTC});
+        this.setState({ETH: ETH});
+
       })
   }
 
@@ -28,16 +32,52 @@ class App extends Component {
 
       <div className="App">
 
+    <MDBContainer>
+      <br></br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Coin</th>
+            <th scope="col">Price</th>
+            <th scope="col">Market Cap</th>
+            <th scope="col">High Day</th>
+            <th scope="col">Low Day</th>
+            <th scope="col">Change Day</th>
+            <th scope="col">24h</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">2</th>
+            <td>Bitcoin (BTC)</td>
+            <td>{this.state.BTC.PRICE}</td>
+            <td>{this.state.BTC.MKTCAP}</td>
+            <td>{this.state.BTC.LOWDAY}</td>
+            <td>{this.state.BTC.HIGHDAY}</td>
+            <td>{this.state.BTC.CHANGEDAY}</td>
+            <td>{this.state.BTC.CHANGEPCT24HOUR} %</td>
+          </tr>
+
+          <tr>
+            <th scope="row">1</th>
+            <td>Ethereum (ETH)</td>
+            <td>{this.state.BTC.PRICE}</td>
+            <td>{this.state.BTC.MKTCAP}</td>
+            <td>{this.state.BTC.LOWDAY}</td>
+            <td>{this.state.BTC.HIGHDAY}</td>
+            <td>{this.state.BTC.CHANGEDAY}</td>
+            <td>{this.state.BTC.CHANGEPCT24HOUR} %</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </MDBContainer>
+
         <br></br>
-        {Object.keys(this.state.full).map((key) => (
-          <div id="crypto-container">
-            <span className="left">{key}</span>
-            <span className="right">{this.state.full[key]}</span>
-          </div>
-
-        ))}
-
-
 
       </div>
       
