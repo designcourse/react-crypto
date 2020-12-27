@@ -10,7 +10,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      BTC: [],ETH: []
+      BTC: []
     };
   }
 
@@ -18,12 +18,8 @@ class App extends Component {
       axios.get('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH&tsyms=USD')
       .then(res => {
         const BTC = res.data.DISPLAY.BTC.USD;
-        const ETH = res.data.DISPLAY.BTC.ETH;
-
         console.log(res.data.DISPLAY);
         this.setState({BTC: BTC});
-        this.setState({ETH: ETH});
-
       })
   }
 
@@ -51,7 +47,7 @@ class App extends Component {
         </thead>
         <tbody>
           <tr>
-            <th scope="row">2</th>
+            <th scope="row">1</th>
             <td>Bitcoin (BTC)</td>
             <td>{this.state.BTC.PRICE}</td>
             <td>{this.state.BTC.MKTCAP}</td>
@@ -60,24 +56,21 @@ class App extends Component {
             <td>{this.state.BTC.CHANGEDAY}</td>
             <td>{this.state.BTC.CHANGEPCT24HOUR} %</td>
           </tr>
-
-          <tr>
-            <th scope="row">1</th>
-            <td>Ethereum (ETH)</td>
-            <td>{this.state.BTC.PRICE}</td>
-            <td>{this.state.BTC.MKTCAP}</td>
-            <td>{this.state.BTC.LOWDAY}</td>
-            <td>{this.state.BTC.HIGHDAY}</td>
-            <td>{this.state.BTC.CHANGEDAY}</td>
-            <td>{this.state.BTC.CHANGEPCT24HOUR} %</td>
-          </tr>
-
         </tbody>
       </table>
 
     </MDBContainer>
 
         <br></br>
+        {Object.keys(this.state.BTC).map((key) => (
+          <div id="crypto-container">
+            <span className="left">{key}</span>
+            <span className="right">{this.state.BTC[key]}</span>
+          </div>
+
+        ))}
+
+
 
       </div>
       
