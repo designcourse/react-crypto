@@ -182,17 +182,9 @@ class App extends Component {
       </table>
 
     </MDBContainer>
-
-        <br></br>
-        {Object.keys(this.state.BTC).map((key) => (
-          <div id="crypto-container">
-            <span className="left">{key}</span>
-            <span className="right">{this.state.BTC[key]}</span>
-          </div>
-
-        ))}
-
-      </div>
+    
+    
+    </div>
       
     );
   }
