@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import Navbar from './components/Navbar.jsx'
+
 var NumberFormat = require('react-number-format');
 
 class App extends Component {
@@ -13,11 +15,8 @@ class App extends Component {
     };
   }
 
-  //  Cryptocurrencies
-  //  BTC,ETH,IOT,USDT,XRP,LTC,BCH,ADA,BNB,USDC,EOS
-
   componentDidMount() {
-    axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,IOT,USDT,XRP,LTC,BCH,ADA,BNB,USDC,EOS&tsyms=INR')
+    axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,IOT,USDT,XRP,LTC,BCH,ADA,BNB,USDC,EOS&tsyms=USD')
       .then(res => {
         const cryptos = res.data;
         console.log(cryptos);
@@ -27,12 +26,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
 
+      <div className="App">
+        <Navbar />
+
+        <br></br>
         {Object.keys(this.state.cryptos).map((key) => (
           <div id="crypto-container">
             <span className="left">{key}</span>
-            <span className="right"><NumberFormat value={this.state.cryptos[key].INR} displayType={'text'} decimalPrecision={2} thousandSeparator={true} prefix={'₹'} /></span>
+            <span className="right"><NumberFormat value={this.state.cryptos[key].USD} displayType={'text'} decimalPrecision={2} thousandSeparator={true} prefix={'₹ '} /></span>
           </div>
 
         ))}

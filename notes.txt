@@ -1,0 +1,5 @@
+Cryptocurrencies
+BTC,ETH,IOT,USDT,XRP,LTC,BCH,ADA,BNB,USDC,EOS
+
+Indian Rupee Symbol ₹
+  
