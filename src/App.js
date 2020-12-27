@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import Navbar from './components/Navbar.jsx'
+import Navbar from './components/Navbar/Navbar.jsx'
+import FooterPage from './components/Footer/FooterPage.jsx'
 
 var NumberFormat = require('react-number-format');
 
@@ -38,7 +39,11 @@ class App extends Component {
           </div>
 
         ))}
+
+      <FooterPage />
+
       </div>
+      
     );
   }
 }
