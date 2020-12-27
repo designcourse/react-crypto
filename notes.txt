@@ -4,3 +4,10 @@ BTC,ETH,IOT,USDT,XRP,LTC,BCH,ADA,BNB,USDC,EOS
 Indian Rupee Symbol ₹
   
 Image URL :- https://www.cryptocompare.com/media/19633/btc.png
+
+
+Sources :-
+
+https://min-api.cryptocompare.com/documentation?key=Price&cat=multipleSymbolsFullPriceEndpoint
+https://coinmarketcap.com/all/views/all/
+https://www.cryptocompare.com/coins/list/all/USD/1  

@@ -51,7 +51,7 @@ class App extends Component {
     <MDBContainer>
 
       <br></br>
-      <table class="table">
+      <table class="table table-bordered table-hover">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
@@ -69,7 +69,7 @@ class App extends Component {
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Bitcoin (BTC)</td>
+            <td><img src="https://www.cryptocompare.com/media/19633/btc.png" height="20" width="20" alt="btc.png"></img> Bitcoin (BTC)</td>
             <td>{this.state.BTC.PRICE}</td>
             <td>{this.state.BTC.MKTCAP}</td>
             <td>{this.state.BTC.LOWDAY}</td>
@@ -80,7 +80,7 @@ class App extends Component {
 
           <tr>
             <th scope="row">2</th>
-            <td>Ethereum (ETH)</td>
+            <td><img src="https://www.cryptocompare.com/media/20646/eth_logo.png" height="20" width="20" alt="eth.png"></img> Ethereum (ETH)</td>
             <td>{this.state.ETH.PRICE}</td>
             <td>{this.state.ETH.MKTCAP}</td>
             <td>{this.state.ETH.LOWDAY}</td>
@@ -91,7 +91,7 @@ class App extends Component {
 
           <tr>
             <th scope="row">3</th>
-            <td>Ethereum (USDT)</td>
+            <td><img src="https://www.cryptocompare.com//media/1383672/usdt.png" height="20" width="20" alt="usdt.png"></img> Tether (USDT)</td>
             <td>{this.state.USDT.PRICE}</td>
             <td>{this.state.USDT.MKTCAP}</td>
             <td>{this.state.USDT.LOWDAY}</td>
@@ -102,7 +102,7 @@ class App extends Component {
 
           <tr>
             <th scope="row">4</th>
-            <td>Ethereum (XRP)</td>
+            <td><img src="https://www.cryptocompare.com/media/34477776/xrp.png" height="20" width="20" alt="xrp.png"></img> XRP (XRP)</td>
             <td>{this.state.XRP.PRICE}</td>
             <td>{this.state.XRP.MKTCAP}</td>
             <td>{this.state.XRP.LOWDAY}</td>
@@ -113,7 +113,7 @@ class App extends Component {
           
           <tr>
             <th scope="row">5</th>
-            <td>Ethereum (LTC)</td>
+            <td><img src="https://www.cryptocompare.com/media/35309662/ltc.png" height="20" width="20" alt="ltc.png"></img> Litecoin (LTC)</td>
             <td>{this.state.LTC.PRICE}</td>
             <td>{this.state.LTC.MKTCAP}</td>
             <td>{this.state.LTC.LOWDAY}</td>
@@ -124,7 +124,7 @@ class App extends Component {
 
           <tr>
             <th scope="row">6</th>
-            <td>Ethereum (EOS)</td>
+            <td><img src="https://www.cryptocompare.com/media/1383652/eos_1.png" height="20" width="20" alt="eos.png"></img> EOS (EOS)</td>
             <td>{this.state.EOS.PRICE}</td>
             <td>{this.state.EOS.MKTCAP}</td>
             <td>{this.state.EOS.LOWDAY}</td>
@@ -135,7 +135,7 @@ class App extends Component {
 
           <tr>
             <th scope="row">7</th>
-            <td>Ethereum (BCH)</td>
+            <td><img src="https://www.cryptocompare.com/media/35650680/bch.png" height="20" width="20" alt="bch.png"></img> Bitcoin Cash (BCH)</td>
             <td>{this.state.BCH.PRICE}</td>
             <td>{this.state.BCH.MKTCAP}</td>
             <td>{this.state.BCH.LOWDAY}</td>
@@ -146,7 +146,7 @@ class App extends Component {
 
           <tr>
             <th scope="row">8</th>
-            <td>Ethereum (ADA)</td>
+            <td><img src="https://www.cryptocompare.com/media/12318177/ada.png" height="20" width="20" alt="ada.png"></img> Cardano (ADA)</td>
             <td>{this.state.ADA.PRICE}</td>
             <td>{this.state.ADA.MKTCAP}</td>
             <td>{this.state.ADA.LOWDAY}</td>
@@ -157,7 +157,7 @@ class App extends Component {
 
           <tr>
             <th scope="row">9</th>
-            <td>Ethereum (BNB)</td>
+            <td><img src="https://www.cryptocompare.com/media/1383947/bnb.png" height="20" width="20" alt="bnb.png"></img> Binance Coin (BNB)</td>
             <td>{this.state.BNB.PRICE}</td>
             <td>{this.state.BNB.MKTCAP}</td>
             <td>{this.state.BNB.LOWDAY}</td>
@@ -168,7 +168,7 @@ class App extends Component {
 
           <tr>
             <th scope="row">10</th>
-            <td>Ethereum (USDC)</td>
+            <td><img src="https://www.cryptocompare.com/media/34835941/usdc.png" height="20" width="20" alt="usdc.png"></img>   USD Coin   (USDC)</td>
             <td>{this.state.USDC.PRICE}</td>
             <td>{this.state.USDC.MKTCAP}</td>
             <td>{this.state.USDC.LOWDAY}</td>
