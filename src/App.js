@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import Navbar from './components/Navbar.jsx'
+import Footer from './components/FooterPage.jsx'
+
 
 var NumberFormat = require('react-number-format');
 
@@ -22,6 +24,13 @@ class App extends Component {
         console.log(cryptos);
         this.setState({cryptos: cryptos});
       })
+
+      axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,XRP,LTC,BCH,ADA,BNB,USDC,EOS&tsyms=USD')
+      .then(res => {
+        const cryptoss = res.data;
+        console.log(cryptoss);
+        this.setState({cryptoss: cryptoss});
+      })
   }
 
   render() {
@@ -29,6 +38,7 @@ class App extends Component {
 
       <div className="App">
         <Navbar />
+
 
         <br></br>
         {Object.keys(this.state.cryptos).map((key) => (
@@ -38,6 +48,9 @@ class App extends Component {
           </div>
 
         ))}
+
+
+      <Footer />  
       </div>
     );
   }
