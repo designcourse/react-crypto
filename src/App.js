@@ -12,7 +12,11 @@ class App extends Component {
   }
 
   componentDidMount() {
+<<<<<<< HEAD
     axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,IOT&tsyms=INR')
+=======
+    axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,IOT&tsyms=USD')
+>>>>>>> parent of 0b9bee0... Added other cryptos
       .then(res => {
         //const cryptos = res.data;
         const cryptos = res.data;
