@@ -24,8 +24,23 @@ class App extends Component {
   }
 
   componentDidMount() {
-      axios.get('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,IOT,USDT,XRP,LTC,BCH,ADA,BNB,USDC,EOS&tsyms=USD')
-      .then(res => {
+      this.getData();
+      }
+
+      componentWillUnmount() {
+        /*
+          stop getData() from continuing to run even
+          after unmounting this component. Notice we are calling
+          'clearTimeout()` here rather than `clearInterval()` as
+          in the previous example.
+        */
+        clearTimeout(this.intervalID);
+      }
+
+      getData = () => {
+
+        axios.get('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,IOT,USDT,XRP,LTC,BCH,ADA,BNB,USDC,EOS&tsyms=USD')
+        .then(res => {
         const BTC = res.data.DISPLAY.BTC.USD;
         const ETH = res.data.DISPLAY.ETH.USD;
         const USDT = res.data.DISPLAY.USDT.USD;
@@ -41,7 +56,10 @@ class App extends Component {
         console.log("One Above")
         this.setState({BTC: BTC, ETH : ETH, USDT : USDT, XRP : XRP, LTC : LTC, BCH : BCH, ADA : ADA, BNB : BNB, USDC : USDC, EOS : EOS });
       })
-  }
+
+        this.intervalID = setTimeout(this.getData.bind(this), 1000);
+
+      }
 
   render() {
     return (
