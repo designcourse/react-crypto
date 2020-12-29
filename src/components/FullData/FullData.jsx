@@ -52,8 +52,6 @@ class App extends Component {
         const USDC = res.data.DISPLAY.USDC.USD;
         const EOS = res.data.DISPLAY.EOS.USD;
 
-        console.log(res.data.DISPLAY)
-        console.log("One Above")
         this.setState({BTC: BTC, ETH : ETH, USDT : USDT, XRP : XRP, LTC : LTC, BCH : BCH, ADA : ADA, BNB : BNB, USDC : USDC, EOS : EOS });
       })
 
@@ -67,10 +65,9 @@ class App extends Component {
     <div className="App">
 
     <MDBContainer>
-
       <br></br>
-      <table class="table table-bordered table-hover">
-        <thead class="thead-dark">
+      <table className="table table-bordered table-hover table-responsive-md">
+        <thead className="thead-dark">
           <tr>
             <th scope="col">#</th>
             <th scope="col">Coin</th>
@@ -200,6 +197,42 @@ class App extends Component {
       </table>
 
     </MDBContainer>
+
+    {/* <MDBContainer>
+
+      <br></br>
+      <table className="table table-bordered table-hover">
+        <thead className="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Coin</th>
+            <th scope="col">Price</th>
+            <th scope="col">Market Cap</th>
+            <th scope="col">High Day</th>
+            <th scope="col">Low Day</th>
+            <th scope="col">Change Day</th>
+            <th scope="col">24h</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><img src="https://www.cryptocompare.com/media/19633/btc.png" height="20" width="20" alt="btc.png"></img> Bitcoin (BTC)</td>
+            <td>{this.state.BTC.PRICE}</td>
+            <td>{this.state.BTC.MKTCAP}</td>
+            <td>{this.state.BTC.LOWDAY}</td>
+            <td>{this.state.BTC.HIGHDAY}</td>
+            <td>{this.state.BTC.CHANGEDAY}</td>
+            <td>{this.state.BTC.CHANGEPCT24HOUR} %</td>
+          </tr>
+          </tbody>
+          </table>
+
+
+          </MDBContainer> */}
+
     
     
     </div>
