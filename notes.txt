@@ -1,0 +1,21 @@
+Cryptocurrencies
+BTC,ETH,USDT,XRP,LTC,BCH,ADA,BNB,USDC,EOS
+
+Indian Rupee Symbol ₹
+  
+Image URL :- https://www.cryptocompare.com/media/19633/btc.png
+
+
+Sources :-
+
+https://min-api.cryptocompare.com/documentation?key=Price&cat=multipleSymbolsFullPriceEndpoint
+https://coinmarketcap.com/all/views/all/
+https://www.cryptocompare.com/coins/list/all/USD/1  
+
+
+Update Values Dynamically :-
+https://blog.stvmlbrn.com/2019/02/20/automatically-refreshing-data-in-react.html
+
+Responsive Mobile Web Deisgn :-
+
+https://reactjsexample.com/react-super-responsive-table-converts-your-table-data-to-a-user-friendly-list-in-mobile-view/
